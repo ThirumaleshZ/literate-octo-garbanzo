@@ -1,0 +1,161 @@
+{
+  "payments": [
+    {
+      "id": 1,
+      "dueDate": {
+        "dueDate": "Mar 03,2021",
+        "daysLeft": "31 day(s) from now"
+      },
+      "status": "Upcoming",
+      "expectedAmount": "-14,204.55",
+      "outstanding": "156,250.05"
+    },
+    {
+      "id": 2,
+      "dueDate": {
+        "dueDate": "Jun 03,2021",
+        "daysLeft": "62 day(s) from now"
+      },
+      "status": "Upcoming",
+      "expectedAmount": "-14,204.55",
+      "outstanding": "142,045.50"
+    },
+    {
+      "id": 3,
+      "dueDate": {
+        "dueDate": "Jul 03,2021",
+        "daysLeft": "92 day(s) from now"
+      },
+      "status": "Upcoming",
+      "expectedAmount": "-14,204.55",
+      "outstanding": "127,840.95"
+    },
+    {
+      "id": 4,
+      "dueDate": {
+        "dueDate": "Aug 03,2021",
+        "daysLeft": "123 day(s) from now"
+      },
+      "status": "Upcoming",
+      "expectedAmount": "-14,204.55",
+      "outstanding": "113,636.40"
+    },
+    {
+      "id": 5,
+      "dueDate": {
+        "dueDate": "Sep 03,2021",
+        "daysLeft": "153 day(s) from now"
+      },
+      "status": "Upcoming",
+      "expectedAmount": "-14,204.55",
+      "outstanding": "99,431.85"
+    },
+    {
+      "id": 6,
+      "dueDate": {
+        "dueDate": "Oct 03,2021",
+        "daysLeft": "184 day(s) from now"
+      },
+      "status": "Upcoming",
+      "expectedAmount": "-14,204.55",
+      "outstanding": "85,227.30"
+    }
+  ],
+  "contracts": [
+    {
+      "id": 1,
+      "name": "Contract 1",
+      "type": "Monthly",
+      "status": "Available",
+      "perPayment": "12000.25",
+      "termLength": {
+        "termLength": "12 months",
+        "termPercentage": "2.0% fee"
+      },
+      "totalFinanced": "-",
+      "paymentAmount": "126722.64"
+    },
+    {
+      "id": 2,
+      "name": "Contract 6",
+      "type": "Monthly",
+      "status": "Available",
+      "perPayment": "6000.00",
+      "termLength": {
+        "termLength": "12 months",
+        "termPercentage": "2.0% fee"
+      },
+      "totalFinanced": "-",
+      "paymentAmount": "63360.00"
+    },
+    {
+      "id": 3,
+      "name": "Contract 5",
+      "type": "Monthly",
+      "status": "Available",
+      "perPayment": "6000.00",
+      "termLength": {
+        "termLength": "12 months",
+        "termPercentage": "2.0% fee"
+      },
+      "totalFinanced": "-",
+      "paymentAmount": "63360.00"
+    },
+    {
+      "id": 4,
+      "name": "Contract 4",
+      "type": "Monthly",
+      "status": "Available",
+      "perPayment": "6000.00",
+      "termLength": {
+        "termLength": "12 months",
+        "termPercentage": "2.0% fee"
+      },
+      "totalFinanced": "-",
+      "paymentAmount": "63360.00"
+    },
+    {
+      "id": 5,
+      "name": "Contract 3",
+      "type": "Monthly",
+      "status": "Available",
+      "perPayment": "6000.00",
+      "termLength": {
+        "termLength": "12 months",
+        "termPercentage": "2.0% fee"
+      },
+      "totalFinanced": "-",
+      "paymentAmount": "63360.00"
+    },
+    {
+      "id": 6,
+      "name": "Contract 2",
+      "type": "Monthly",
+      "status": "Available",
+      "perPayment": "6000.00",
+      "termLength": {
+        "termLength": "12 months",
+        "termPercentage": "2.0% fee"
+      },
+      "totalFinanced": "-",
+      "paymentAmount": "21120.00"
+    }
+  ],
+  "cashkicks": [
+    {
+      "id": 1,
+      "name": "My first advance",
+      "status": "Pending",
+      "maturity": "Apr 03, 2022",
+      "totalRecieved": {
+        "totalRecieved": "150,000.00",
+        "totalInterestrate": "12% fee"
+      },
+      "totalFinanced": "170,454.55"
+    }
+  ]
+  ,
+  "user": {
+    "totalAmount": "880000.00"
+  }
+}
