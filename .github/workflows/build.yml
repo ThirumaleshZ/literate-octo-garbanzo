@@ -1,28 +1,32 @@
 name: Build
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
   pull_request:
-    types: [opened, synchronize, reopened]
+    branches: ["main"]
+  workflow_dispatch:
+
 jobs:
-  build:
+  sonarcloud:
+    name: SonarCloud
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
-      - name: Cache
-        id: cache-dependencies
-        uses: actions/cache@v2
+          fetch-depth: 0
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          path: |
-            ~/cache
-            !~/cache/exclude
-            **/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+          node-version: ${{ matrix.node-version }}
+      - name: Install Dependencies
+        run: npm install --legacy-peer-deps
+      - name: Test and coverage
+        run: npm test
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
