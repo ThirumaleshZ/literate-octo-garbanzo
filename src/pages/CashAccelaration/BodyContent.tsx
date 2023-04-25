@@ -93,7 +93,14 @@ const BodyContent = () => {
     React.useEffect(() => {
       console.log(resourceType);
       
-      axios.get(`${BASE_URL}${resourceType}`)
+      axios.get(`${BASE_URL}${resourceType}`, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "*",
+        },
+      })
       .then(res => {
         setRows(res.data);
         setItems(

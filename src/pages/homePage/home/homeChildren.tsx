@@ -14,7 +14,14 @@ const HomePageChildren = () => {
   const [totalAmount, setTotalAmount] = useState<string>("$880,000.00");
   const navigate = useNavigate();
   useEffect(() => {
-    axios.get(`${BASE_URL}user`).then((response) => {
+    axios.get(`${BASE_URL}user`, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Methods": "*",
+        "Access-Control-Allow-Headers": "*",
+      },
+    }).then((response) => {
       setTotalAmount(response.data.totalAmount);
     });
   }, []);
