@@ -127,10 +127,24 @@ export const BodyComponent=()=>{
   const [rows, setRows]=useState<typeof columnsContracts>();
   const navigate = useNavigate();
     useEffect(()=>{
-      axios.get(`${BASE_URL}cashkicks`).then((res)=>{
+      axios.get(`${BASE_URL}cashkicks`, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "*",
+        },
+      }).then((res)=>{
         setPost(res.data);
       })
-      axios.get(`${BASE_URL}payments`).then((res)=>{
+      axios.get(`${BASE_URL}payments`, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "*",
+        },
+      }).then((res)=>{
         setPayment(res.data);
       })
       setRows(location?.state?.selectedRows);

@@ -9,9 +9,18 @@ const HomePage = () => {
   const [payments, setPayments] = useState([]);
 
   useEffect(() => {
-    axios.get(`${BASE_URL}payments`).then((response) => {
-      setPayments(response.data);
-    });
+    axios
+      .get(`${BASE_URL}payments`, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "*",
+        },
+      })
+      .then((response) => {
+        setPayments(response.data);
+      });
   }, []);
 
   return (

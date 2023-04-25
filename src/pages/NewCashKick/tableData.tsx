@@ -96,7 +96,14 @@ const TableData = () => {
   ];
   const getdata = () => {
     axios
-      .get(`${BASE_URL}contracts`)
+      .get(`${BASE_URL}contracts`, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "*",
+        },
+      })
       .then((res) => {
         setUsers(res.data);
         setTableData(res.data);
